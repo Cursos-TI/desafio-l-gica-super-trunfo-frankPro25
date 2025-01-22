@@ -12,12 +12,7 @@ int calcPib(float pib, int populacao)
 int comparar(int comp, int comp1)
 {
     int comparacao = comp - comp1;
-    if (comparacao > 0)
-    {
-        return comparacao;
-    }else if(comparacao<0){
-        return comparacao;
-    }
+    return comparacao;
 }
 int superCard(int item1,int item2,int item3,int item4,int item5,int item6)
 {
@@ -69,8 +64,11 @@ int main()
         result[0]="perdeu";
     }
     printf("\n                                  Dados das cartas\n\n");
+
     printf("                 Carta 1                                          Carta 2\n"); // identificador de carta ajustado
+
     printf(" ___________________________________________    ___________________________________________\n");
+
     printf("|     estado       |%-24s|  |     estado       |%-24s|\n", estado[0], estado[1]);
 
     printf("| codigo da carta  |%s%-23s|  | codigo da carta  |%s%-23s|\n", estado, codigo, estado[1], codigo[1]);
@@ -88,13 +86,15 @@ int main()
     printf("|dens. populacional|%-17i%s|  |dens. populacional|%-17i%s|\n", densP, "hab/km²", densP1, "hab/km²");
 
     printf("| pontos turisticos|%-24i|  | pontos turisticos|%-24i|\n", pontosTuristicos[0], pontosTuristicos[1]);
+
     printf("|___________________________________________|  |___________________________________________|\n");
 
-    getchar();
-
     printf("\n                                  Comparar as cartas\n\n");
+
     printf("                 Carta 1                                          Carta 2\n"); // identificador de carta ajustado
+    
     printf(" ___________________________________________                ___________________________________________\n");
+
     printf("|     estado       |%-24s|              |     estado       |%-24s|\n", estado[0], estado[1]);
 
     printf("| codigo da carta  |%s%-23s|              | codigo da carta  |%s%-23s|\n", estado, codigo, estado[1], codigo[1]);
@@ -113,7 +113,7 @@ int main()
 
     printf("| pontos turisticos|%-24i| %-12i | pontos turisticos|%-24i|%-12i\n", pontosTuristicos[0], comparar(pontosTuristicos[0], pontosTuristicos[1]), pontosTuristicos[1],comparar(pontosTuristicos[1], pontosTuristicos[0]));
     
-    printf("|       super      |%-17i%s| %-12i |       super      |%-17i%s|%-12i\n", densP, "hab/km²", supercard, densP1, "hab/km²", supercard1);
+    printf("|       super      |%-24i| %-12i |       super      |%-24i|%-12i\n",supercard,comparar(supercard,supercard1), supercard1,comparar(supercard1,supercard));
 
     printf("|___________________________________________|              |___________________________________________|\n");
     printf("                Carta 1 %s                                                      Carta 2 %s              \n",result[0],result[1]);
