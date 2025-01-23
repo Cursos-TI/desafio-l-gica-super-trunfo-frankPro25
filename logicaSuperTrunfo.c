@@ -89,7 +89,7 @@ int main()
     getchar;
     char decisao;
     //nova funcao que permite escolher propriedade
-    printf("Deseja escolhe a propriedade para avaliar qual venceu? caso nao o Super o parametro padrao\nA)Padrao    B)escolher\n");
+    printf("Deseja escolhe a propriedade para avaliar qual venceu? \nA) Super    B) Escolher   D) Exit\n");
     scanf(" %c", &decisao);
 
     decisao = decisao + ('A' - 'a');
@@ -150,20 +150,14 @@ int main()
             }
             break;
         case 'D':
-            if (supercard > supercard1)
-            {
-                result[0] = "venceu";
-                result[1] = "perdeu";
-            }
-            else
-            {
-                result[1] = "venceu";
-                result[0] = "perdeu";
-            }
+             result[0] =(supercard > supercard1) ? "venceu": "perdeu";
+             result[1] =(supercard < supercard1) ? "venceu": "perdeu";   
             break;
         default:
             break;
         }
+    }else{
+        return 0;
     }
 
     printf("\n                                  Comparar as cartas\n\n");
